@@ -112,6 +112,14 @@ footer {
   color: black;
 }
 
+.contact-info > a {
+  font-size: 30px;
+  background-color: #848e96;
+  padding: 5px;
+  border-radius: 5px;
+  color: aliceblue;
+}
+
 /* .input-container {
     background-color: blue;
 } */
@@ -232,6 +240,15 @@ footer {
     right: -200px;
     height: 100vh;
     padding-right: 5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .home-header ul li a::before {
+    background-color: #9c9c9c;
+  }
+  .home-header ul li a::after {
+    background-color: whitesmoke;
   }
   .open-menu {
     display: block;

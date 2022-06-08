@@ -80,7 +80,7 @@ const getFutureProducts = async()=> {
         btn.addEventListener('click',(e)=> {
             let productNumber = e.target.getAttribute('data-product')
             console.log(productNumber);
-            window.location.href = `../singleProduct/sProduct.html?productid=${productNumber}`;
+            window.location.href = `./singleProduct/sProduct.html?productid=${productNumber}`;
         })
     })
 }

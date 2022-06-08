@@ -157,7 +157,7 @@ a {
 }
 
 .product-container:hover {
-    box-shadow: 1px 1px 3px black,-1px -1px 3px black;
+    box-shadow: 1px 1px 4px rgb(151, 151, 151),-1px -1px 4px rgb(180, 180, 180);
     background-color: hsl(195, 53%, 79%,0.5);
 }
 
@@ -370,6 +370,14 @@ footer {
     color: black;
 }
 
+.contact-info > a {
+    font-size: 30px;
+    background-color: rgb(132, 142, 150);
+    padding: 5px;
+    border-radius: 5px;
+    color: aliceblue;
+}
+
 
 /* .input-container {
     background-color: blue;
@@ -466,7 +474,16 @@ footer {
         right: -200px;
         height: 100vh;
         padding-right: 5px;
+        align-items: center;
     }
+
+    
+.home-header ul li a::before {
+    background-color: rgb(156, 156, 156);
+}
+.home-header ul li a::after {
+    background-color: whitesmoke;
+}
 
     .open-menu {
         display: block;

@@ -156,6 +156,14 @@ footer {
     color: black;
 }
 
+.contact-info > a {
+    font-size: 30px;
+    background-color: rgb(132, 142, 150);
+    padding: 5px;
+    border-radius: 5px;
+    color: aliceblue;
+}
+
 .input-container input {
     border-radius: 4px;
     border: none;
@@ -233,7 +241,16 @@ footer {
         right: -200px;
         height: 100vh;
         padding-right: 5px;
+        align-items: center;
     }
+
+    
+.home-header ul li a::before {
+    background-color: rgb(156, 156, 156);
+}
+.home-header ul li a::after {
+    background-color: whitesmoke;
+}
 
     .open-menu {
         display: block;

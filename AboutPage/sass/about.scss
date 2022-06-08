@@ -1,4 +1,4 @@
-* {
+*{
     box-sizing: border-box;
 }
 
@@ -110,10 +110,6 @@ footer {
     border-radius: 5px;
     color: aliceblue;
 }
-
-/* .input-container {
-    background-color: blue;
-} */
 
 .input-container input {
     border-radius: 4px;
@@ -234,102 +230,82 @@ footer {
 
 .banner-1 {
     text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+.banner-1 h1 , .banner-1 h5 {
+    background-color: rgba(31, 143, 255, 0.8,);
+    // color: black;
+    padding: 5px;
 }
 
 .banner-img-container {
     height: 30vh;
-    background: url('https://www.insperity.com/wp-content/uploads/Flu_1200x630.png') no-repeat;
+    background: url('https://mobiletry.com/wp-content/uploads/2016/01/marketing-dla-malego-biznesu-sprawdzone-porady-970x323.png') no-repeat;
     background-position: center;
     background-size: cover;
     color: aliceblue;
 }
 
-
-.new-products-section {
+.img-aboutText {
     display: flex;
-    flex-direction: column;
-    transition: all 0.7s ease-in-out;
-    align-items: center;
-    padding-top: 50px;
-}
-
-.new-products {
-    transition: all 0.7s ease-in-out;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-
-.product-container {
-    box-shadow: 2px 2px 3px lightgray,-2px -2px 3px lightgray;
-    padding: 30px;
-    width: 300px;
-    margin: 20px;
-    border-radius: 5px;
-    background-color: lightblue;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-height: 60vh;
     justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 
-.product-container:hover {
-    box-shadow: 1px 1px 3px rgb(203, 197, 197),-1px -1px 3px rgb(205, 199, 199);
+.imgContainer {
+    max-width: 400px;
+    max-height: 40vh;
+    margin-bottom: 10px;
 }
 
-.product-container:hover img {
-    transform: scale(1.1);
-    transition: all 0.3s ease-in-out;
-}
-
-.product-container img {
-    width: 80%;
-    border-radius: 10px;
-}
-
-.product-container button {
-    border: none;
-}
-
-.priceandcartIcon {
+.imgContainer img {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.details-btn {
-    position: absolute;
-    left: 5px;
-    top: 1px;
-    display: none;
-    background-color: black;
-    padding: 5px;
-    color: aliceblue;
-    transition: all 0.2s ease-in-out;
+.aboutText {
+    background-color: rgba(240, 248, 255,0.8);
+    max-width: 300px;
+    padding: 10px;
+    margin-top: 40px;
+    height: fit-content;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px whitesmoke,-1px -1px 4px whitesmoke;
 }
 
-.product-container:hover .details-btn {
+.download-app {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.video {
+    max-width: 500px;
     display: block;
+    margin: 10px auto;
+}
+@media (max-width:500px){
+    .video {
+        max-width: 70%;
+        display: block;
+        margin: 10px auto;
+    }
+
 }
 
-.details-btn:hover {
-    background-color: aliceblue;
-    color: black;
-    
+.card {
+    margin: 5px auto;
 }
 
-.addtocart-btn {
-    background-color: black;
-    padding: 5px;
-    color: aliceblue;
-    transition: all 0.2s ease-in-out;
-}
+/* -----------------------Future products---------------------- */
 
-.addtocart-btn:hover {
-    background-color: aliceblue;
-    color: black;
+.future-products-section {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    transition: all 0.7s ease-in-out;
+    align-items: center;
 }
