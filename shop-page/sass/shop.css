@@ -1,0 +1,381 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #575757;
+}
+
+a {
+  text-decoration: none;
+}
+
+.home-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  background-color: #848e96;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 200;
+}
+
+.home-header > a {
+  font-size: 22px;
+  color: aliceblue;
+  padding-left: 10px;
+}
+
+.home-header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.home-header ul li {
+  list-style: none;
+  margin: 5px;
+}
+
+.home-header ul li a {
+  text-decoration: none;
+  padding: 5px;
+  position: relative;
+  color: azure;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.home-header ul li a:hover {
+  color: aliceblue;
+}
+
+.home-header ul li a::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  bottom: -5px;
+  left: 50%;
+  background-color: #2c3a48;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.home-header ul li a:hover::after {
+  width: 100%;
+  left: 0;
+  background-color: brown;
+}
+
+.home-header ul li a::before {
+  content: '';
+  width: 0;
+  height: 0;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.home-header ul li a:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  background-color: #312d2d;
+  padding: 10px;
+  min-height: 50vh;
+  color: aliceblue;
+}
+
+.contact {
+  background-color: whitesmoke;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px;
+  color: black;
+}
+
+/* .input-container {
+    background-color: blue;
+} */
+.input-container input {
+  border-radius: 4px;
+  border: none;
+  width: 400px;
+  font-size: 18px;
+  padding: 10px;
+  outline: none;
+  -webkit-box-shadow: 1px 1px 3px #464444, -1px -1px 3px black;
+          box-shadow: 1px 1px 3px #464444, -1px -1px 3px black;
+}
+
+.input-container button {
+  border: none;
+  padding: 10px;
+  background-color: black;
+  color: aliceblue;
+}
+
+.input-container button:hover {
+  background-color: aliceblue;
+  color: black;
+  font-weight: bold;
+}
+
+.links-footer {
+  padding: 40px 0px 0px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.other-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.left-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5px;
+}
+
+.right-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.buttons-app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.buttons-app a {
+  background-color: aliceblue;
+  padding: 5px;
+}
+
+.buttons-app img {
+  width: 100px;
+}
+
+.visa img {
+  width: 100px;
+}
+
+.rating-div .star {
+  width: 20px;
+  margin: 5px;
+}
+
+.open-menu {
+  display: none;
+}
+
+.close-menu {
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .home-header ul {
+    background-color: #4d4e4e;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: fixed;
+    top: 1px;
+    right: -200px;
+    height: 100vh;
+    padding-right: 5px;
+  }
+  .open-menu {
+    display: block;
+    cursor: pointer;
+  }
+  .close-menu {
+    display: block;
+  }
+  .input-container input {
+    width: 200px;
+  }
+}
+
+.banner-1 {
+  text-align: center;
+}
+
+.banner-img-container {
+  height: 30vh;
+  background: url("https://www.insperity.com/wp-content/uploads/Flu_1200x630.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: aliceblue;
+}
+
+.new-products-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 50px;
+}
+
+.new-products {
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.product-container {
+  -webkit-box-shadow: 2px 2px 3px lightgray,-2px -2px 3px lightgray;
+          box-shadow: 2px 2px 3px lightgray,-2px -2px 3px lightgray;
+  padding: 30px;
+  width: 300px;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: lightblue;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.product-container:hover {
+  -webkit-box-shadow: 1px 1px 3px #cbc5c5, -1px -1px 3px #cdc7c7;
+          box-shadow: 1px 1px 3px #cbc5c5, -1px -1px 3px #cdc7c7;
+}
+
+.product-container:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.product-container img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+.product-container button {
+  border: none;
+}
+
+.priceandcartIcon {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details-btn {
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  display: none;
+  background-color: black;
+  padding: 5px;
+  color: aliceblue;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.product-container:hover .details-btn {
+  display: block;
+}
+
+.details-btn:hover {
+  background-color: aliceblue;
+  color: black;
+}
+
+.addtocart-btn {
+  background-color: black;
+  padding: 5px;
+  color: aliceblue;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.addtocart-btn:hover {
+  background-color: aliceblue;
+  color: black;
+}
+/*# sourceMappingURL=shop.css.map */

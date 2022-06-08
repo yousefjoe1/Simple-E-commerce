@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: rgb(132, 142, 150);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 200;
+
+}
+
+
+.home-header > a {
+    font-size: 22px;
+    color: aliceblue;
+    padding-left: 10px;
+}
+
+.home-header ul {
+    display: flex;
+    transition: all 0.4s ease-in-out;
+}
+
+.home-header ul li {
+    list-style: none;
+    margin: 5px;
+}
+
+.home-header ul li a {
+    text-decoration: none;
+    padding: 5px;
+    position: relative;
+    color: azure;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.home-header ul li a:hover {
+    color: aliceblue;
+}
+
+.home-header ul li a::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    background-color: rgb(44, 58, 72);
+    transition: all 0.4s ease-in-out;
+}
+
+.home-header ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: brown;
+}
+
+.home-header ul li a::before {
+    content: '';
+    width: 0;
+    height: 0;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+}
+
+.home-header ul li a:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.open-menu {
+    display: none;
+}
+
+.close-menu {
+    cursor: pointer;
+    display: none;
+}
+
+// ----------------------------- The Product ----------------------------
+
+.product-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.product {
+    display: flex;
+    padding: 5px;
+}
+
+.priceQuantityCartBtn {
+    text-align: center;
+}
+
+.catgpricename {
+    // background-color: cornflowerblue;
+    box-shadow: 1px 1px 4px lightslategrey;
+    border-radius: 5px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    margin-top: 30px;
+
+}
+
+.quantityInput {
+    width: 65px;
+    outline: none;
+    display: block;
+    margin: 1px auto;
+}
+
+.addtocartBtn {
+    border: none;
+    background-color: black;
+    color: aliceblue;
+    margin: 10px 0 10px 0;
+}
+.addtocartBtn:hover {
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 1px 1px 4px lightslategrey;
+    border-radius: 5px;
+}
+
+// ------------------------ Footer ------------------------------
+footer {
+    background-color: rgb(49, 45, 45);
+    padding: 10px;
+    min-height: 50vh;
+    color: aliceblue;
+}
+
+.contact {
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    color: black;
+}
+
+.input-container input {
+    border-radius: 4px;
+    border: none;
+    width: 400px;
+    font-size: 18px;
+    padding: 10px;
+    outline: none;
+    box-shadow: 1px 1px 3px rgb(70, 68, 68),-1px -1px 3px black;
+}
+
+.input-container button {
+    border: none;
+    padding: 10px;
+    background-color: black;
+    color: aliceblue;
+}
+
+.input-container button:hover {
+    background-color: aliceblue;
+    color: black;
+    font-weight: bold;
+}
+
+
+.links-footer {
+    padding: 40px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.other-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-links {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.right-links {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    flex-wrap: wrap;
+}
+
+.buttons-app {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttons-app a {
+    background-color: aliceblue;
+    padding: 5px;
+}
+
+.buttons-app img {
+    width: 100px;
+}
+
+.visa img {
+    width: 100px;
+}
+
+@media (max-width:500px){
+    .home-header ul {
+        background-color: rgb(77, 78, 78);
+        flex-wrap: wrap;
+        flex-direction: column;
+        position: fixed;
+        top: 1px;
+        right: -200px;
+        height: 100vh;
+        padding-right: 5px;
+    }
+
+    .open-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .close-menu {
+        display: block;
+    }
+
+    .input-container input {
+        width: 200px;
+    }
+
+}

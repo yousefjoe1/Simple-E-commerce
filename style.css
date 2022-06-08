@@ -1,0 +1,484 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: rgb(132, 142, 150);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 200;
+
+}
+
+
+.home-header > a {
+    font-size: 22px;
+    color: aliceblue;
+    padding-left: 10px;
+}
+
+.home-header ul {
+    display: flex;
+    transition: all 0.4s ease-in-out;
+}
+
+.home-header ul li {
+    list-style: none;
+    margin: 5px;
+}
+
+.home-header ul li a {
+    text-decoration: none;
+    padding: 5px;
+    position: relative;
+    color: azure;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.home-header ul li a:hover {
+    color: aliceblue;
+}
+
+.home-header ul li a::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    background-color: rgb(44, 58, 72);
+    transition: all 0.4s ease-in-out;
+}
+
+.home-header ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: brown;
+}
+
+.home-header ul li a::before {
+    content: '';
+    width: 0;
+    height: 0;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+}
+
+.home-header ul li a:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------------- Home Page ------------- */
+
+.sec1 {
+    background: url('https://image.spreadshirtmedia.com/image-server/v1/mp/products/T210A2MPA3176PT17X14Y9D1015890960FS4300/views/1,width=550,height=550,appearanceId=2,backgroundColor=F2F2F2,modelId=1543,crop=list/1-down-5-up-nurse-t-shirts-mens-t-shirt.jpg') no-repeat;
+    height: 90vh;
+    width: 100%;
+    background-size: contain;
+    background-position: top 25% right 25%;
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.titles {
+    background-color: hsl(0, 0%, 0%, 0.5);
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 4px;
+    width: 600px;
+}
+
+.titles button {
+    border: none;
+    outline: none;
+    background-color: brown;
+    color:azure;
+}
+
+.sec2 {
+    padding-top: 20px;
+}
+
+.card {
+    margin: 5px auto;
+}
+
+/* -----------------------Future products---------------------- */
+
+.future-products-section {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    transition: all 0.7s ease-in-out;
+    align-items: center;
+}
+
+.all-products {
+    transition: all 0.7s ease-in-out;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-container {
+    box-shadow: 2px 2px 3px lightgray,-2px -2px 3px lightgray;
+    padding: 30px;
+    max-width: 300px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: lightblue;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.product-container:hover {
+    box-shadow: 1px 1px 3px black,-1px -1px 3px black;
+    background-color: hsl(195, 53%, 79%,0.5);
+}
+
+.product-container:hover img {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.product-container img {
+    width: 90%;
+    border-radius: 10px;
+}
+
+.product-container button {
+    border: none;
+}
+
+.priceandcartIcon {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details-btn {
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    display: none;
+    background-color: black;
+    padding: 5px;
+    color: aliceblue;
+    transition: all 0.2s ease-in-out;
+}
+
+.product-container:hover .details-btn {
+    display: block;
+}
+
+.details-btn:hover {
+    background-color: aliceblue;
+    color: black;
+    
+}
+
+.addtocart-btn {
+    background-color: black;
+    padding: 5px;
+    color: aliceblue;
+    transition: all 0.2s ease-in-out;
+}
+
+.addtocart-btn:hover {
+    background-color: aliceblue;
+    color: black;
+}
+
+/* --------------------- Banner -------------------- */
+
+.banner {
+    color: white;
+    background:url('https://www.retail4growth.com/public/uploads/editor/2018-01-16/1516081416.jpg') no-repeat;
+    background-size: cover;
+    background-position:  center;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner div {
+    background-color: hsl(0, 1%, 18%, 0.5);
+    padding: 10px;
+}
+
+.banner div button {
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+.banner div button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+/* ------------------ New products sections */
+
+.new-products-section {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.7s ease-in-out;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.new-products {
+    transition: all 0.7s ease-in-out;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tow-banners {
+    padding-top: 70px;
+}
+
+.banner-1 {
+    background: url('https://eg.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/17/950352/1.jpg?4723') no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+.banner-2 {
+    background: url('https://cdn.shopify.com/s/files/1/2614/6704/products/84276c36a229624d7a9560778209024d_1024x.png?v=1604305611') no-repeat;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.banner-1 .text-banner-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(76, 73, 73,0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.banner-1 .text-banner-1 button ,.banner-2 .text-banner-2 button {
+    background-color: black;
+    color: aliceblue;
+}
+
+.banner-2 .text-banner-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: rgb(76, 73, 73,0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.img-text-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 50vh;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.img-text-1 {
+    background: url('https://image.made-in-china.com/202f0j00IvFikYdCkpzJ/2022-New-Design-Sports-Running-Basketball-Shoes-Men-Branded-Basket-Shoes.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.img-text-2 {
+    background: url('https://img.arabshoppy.com/ae04/kf/Ha5b10fabfa444d3dbea23612e71275f8v.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.img-text-3 {
+    background: url('https://media.timeout.com/images/100407737/750/562/image.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* ----------------------- footer ------------------------*/
+
+footer {
+    background-color: rgb(49, 45, 45);
+    padding: 10px;
+    min-height: 50vh;
+    color: aliceblue;
+}
+
+.contact {
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    color: black;
+}
+
+
+/* .input-container {
+    background-color: blue;
+} */
+
+.input-container input {
+    border-radius: 4px;
+    border: none;
+    width: 400px;
+    font-size: 18px;
+    padding: 10px;
+    outline: none;
+    box-shadow: 1px 1px 3px rgb(70, 68, 68),-1px -1px 3px black;
+}
+
+.input-container button {
+    border: none;
+    padding: 10px;
+    background-color: black;
+    color: aliceblue;
+}
+
+.input-container button:hover {
+    background-color: aliceblue;
+    color: black;
+    font-weight: bold;
+}
+
+
+.links-footer {
+    padding: 40px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.other-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-links {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.right-links {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    flex-wrap: wrap;
+}
+
+.buttons-app {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttons-app a {
+    background-color: aliceblue;
+    padding: 5px;
+}
+
+.buttons-app img {
+    width: 100px;
+}
+
+.visa img {
+    width: 100px;
+}
+
+.rating-div .star {
+    width: 20px;
+    margin: 5px;
+}
+
+.open-menu {
+    display: none;
+}
+
+.close-menu {
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width:500px){
+    .home-header ul {
+        background-color: rgb(77, 78, 78);
+        flex-wrap: wrap;
+        flex-direction: column;
+        position: fixed;
+        top: 1px;
+        right: -200px;
+        height: 100vh;
+        padding-right: 5px;
+    }
+
+    .open-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .close-menu {
+        display: block;
+    }
+
+    .input-container input {
+        width: 200px;
+    }
+
+}
