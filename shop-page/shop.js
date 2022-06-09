@@ -75,6 +75,7 @@ const getNewproducts = async ()=> {
         let cartIcon = document.createElement('button');
         cartIcon.innerText = 'Add To Cart'
         cartIcon.className = 'addtocart-btn'
+        cartIcon.setAttribute('data-product',item.id)
 
 
         priceAndCartIcon.appendChild(productPrice)
@@ -93,7 +94,32 @@ const getNewproducts = async ()=> {
             window.location.href = `../singleProduct/sProduct.html?productid=${productNumber}`;
         })
     })
+    let cartButton = document.querySelectorAll('.addtocart-btn')
+    cartButton.forEach(btn=> {
+        btn.addEventListener('click',(e)=> {
+            let chosenProductId = parseInt(e.target.getAttribute('data-product'))
+            let theProduct = response.filter(product=> product.id === chosenProductId)
+            let chosenProduct = [{...theProduct[0],quantity:1}] 
 
+            if(JSON.parse(localStorage.getItem('cart')).length > 0){
+                let locstrg = JSON.parse(localStorage.getItem('cart'))
+                let checkproductID = locstrg.map(item => item.id)
+
+                if(checkproductID.includes(chosenProduct[0].id) === false) {
+                    let myStorage = localStorage.getItem('cart')
+                    let storedProduct = JSON.parse(myStorage)
+                    let allProduct = [...storedProduct,...chosenProduct]
+                    localStorage.setItem('cart',JSON.stringify(allProduct))
+                }
+            }else {
+                    let myStorage = localStorage.getItem('cart')
+                    let storedProduct = JSON.parse(myStorage)
+                    let allProduct = [...storedProduct,...chosenProduct]
+                    localStorage.setItem('cart',JSON.stringify(allProduct))
+            }
+
+        })
+    })
 }
 
 getNewproducts()

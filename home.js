@@ -4,6 +4,12 @@ const openMenu = document.querySelector('.open-menu')
 const headerUl = document.querySelector('header ul')
 const closeMenu = document.querySelector('.close-menu')
 
+window.onload = ()=> {
+    if(!localStorage.getItem('cart')){
+        localStorage.setItem('cart',JSON.stringify([]))
+    }
+}
+
 
 const getFutureProducts = async()=> {
     let firstCall =  await fetch('https://fakestoreapi.com/products?limit=6');
@@ -35,6 +41,7 @@ const getFutureProducts = async()=> {
         let productDetailsBtn = document.createElement('button');
         productDetailsBtn.innerText = 'Details';
         productDetailsBtn.className = 'details-btn'
+        productDetailsBtn.setAttribute('data-product',item.id)
 
         productDiv.appendChild(categoryTitle)
         productDiv.appendChild(img)
@@ -65,7 +72,7 @@ const getFutureProducts = async()=> {
         let cartIcon = document.createElement('button');
         cartIcon.innerText = 'Add To Cart'
         cartIcon.className = 'addtocart-btn'
-
+        cartIcon.setAttribute('data-product',item.id)
 
         priceAndCartIcon.appendChild(productPrice)
         priceAndCartIcon.appendChild(cartIcon)
@@ -86,7 +93,6 @@ const getFutureProducts = async()=> {
 }
 
 getFutureProducts()
-
 
 const getNewproducts = async ()=> {
     let firstCall =  await fetch('https://fakestoreapi.com/products');
@@ -151,7 +157,7 @@ const getNewproducts = async ()=> {
         let cartIcon = document.createElement('button');
         cartIcon.innerText = 'Add To Cart'
         cartIcon.className = 'addtocart-btn'
-
+        cartIcon.setAttribute('data-product',item.id)
 
         priceAndCartIcon.appendChild(productPrice)
         priceAndCartIcon.appendChild(cartIcon)
@@ -171,7 +177,35 @@ const getNewproducts = async ()=> {
         })
     })
 
+    let cartButton = document.querySelectorAll('.addtocart-btn')
+    cartButton.forEach(btn=> {
+        btn.addEventListener('click',(e)=> {
+            let chosenProductId = parseInt(e.target.getAttribute('data-product'))
+            let theProduct = response.filter(product=> product.id === chosenProductId)
+            let chosenProduct = [{...theProduct[0],quantity:1}] 
+
+            if(JSON.parse(localStorage.getItem('cart')).length > 0){
+                let locstrg = JSON.parse(localStorage.getItem('cart'))
+                let checkproductID = locstrg.map(item => item.id)
+
+                if(checkproductID.includes(chosenProduct[0].id) === false) {
+                    let myStorage = localStorage.getItem('cart')
+                    let storedProduct = JSON.parse(myStorage)
+                    let allProduct = [...storedProduct,...chosenProduct]
+                    localStorage.setItem('cart',JSON.stringify(allProduct))
+                }
+            }else {
+                    let myStorage = localStorage.getItem('cart')
+                    let storedProduct = JSON.parse(myStorage)
+                    let allProduct = [...storedProduct,...chosenProduct]
+                    localStorage.setItem('cart',JSON.stringify(allProduct))
+            }
+
+        })
+    })
+
 }
+
 
 getNewproducts()
 
