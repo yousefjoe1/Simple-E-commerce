@@ -16,8 +16,6 @@ closeMenu.addEventListener('click',()=> {
 const getNewproducts = async ()=> {
     let firstCall =  await fetch('https://fakestoreapi.com/products');
     let response = await firstCall.json();
-    console.log('data');
-    console.log(response);
     response.map(item=> {
         let productDiv = document.createElement('div');
         productDiv.className = 'col-lg-4 col-md-6 p-7 col-sm-12'
@@ -34,11 +32,6 @@ const getNewproducts = async ()=> {
         // name
         let productName = document.createElement('p');
         productName.innerText = item.title
-
-        // // wichlist button
-        // let wichListBtn = document.createElement('button');
-        // wichListBtn.innerText = 'Add wichList';
-        // wichListBtn.className = 'wichlist-btn'
 
         // product details button
         let productDetailsBtn = document.createElement('button');
@@ -90,7 +83,6 @@ const getNewproducts = async ()=> {
     detailsBtn.forEach(btn=> {
         btn.addEventListener('click',(e)=> {
             let productNumber = e.target.getAttribute('data-product')
-            console.log(productNumber);
             window.location.href = `../singleProduct/sProduct.html?productid=${productNumber}`;
         })
     })

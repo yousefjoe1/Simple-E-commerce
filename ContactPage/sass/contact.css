@@ -78,7 +78,7 @@ a {
 .home-header ul li a:hover::after {
   width: 100%;
   left: 0;
-  background-color: brown;
+  background-color: white;
 }
 
 .home-header ul li a::before {

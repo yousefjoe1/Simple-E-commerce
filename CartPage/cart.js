@@ -1,4 +1,7 @@
 const cartProducts = document.querySelector('.cart-products');
+const openMenu = document.querySelector('.open-menu') 
+const headerUl = document.querySelector('header ul')
+const closeMenu = document.querySelector('.close-menu')
 
 window.onload = ()=> {
     getProductsFromLoclStrg()
@@ -28,3 +31,12 @@ const getProductsFromLoclStrg = ()=> {
     let cartTotal = myCart.map(item=> item.price * item.quantity).reduce((a,b)=> a + b)
     totalElement.innerHTML = `Total : ${cartTotal}$`
 }
+
+
+openMenu.addEventListener('click',()=> {
+    headerUl.style.right = '1px'
+})
+
+closeMenu.addEventListener('click',()=> {
+    headerUl.style.right = '-300px'
+})

@@ -13,10 +13,6 @@ closeMenu.addEventListener('click',()=> {
 })
 
 
-
-
-
-
 window.onload = ()=> {
     let productId = parseInt(window.location.href.split('=')[1]);
     getSingleProduct(productId)
@@ -31,7 +27,6 @@ const getSingleProduct = async(prid)=> {
 
     let getProduct = response.find(product=> product.id === prid)
     let myProduct = {...getProduct,quantity:1}
-    console.log(myProduct);
 
     // Product Image
     let prosuctImg = document.createElement('img')
@@ -82,8 +77,6 @@ const getSingleProduct = async(prid)=> {
     productContainer.appendChild(catAndPrcAndname)
     productContainer.appendChild(pricQuaintCartBtn)
 
-
-    // 
     let cartButton = document.querySelector('.addtocartBtn')
         cartButton.addEventListener('click',(e)=> {
 

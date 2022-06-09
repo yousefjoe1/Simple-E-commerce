@@ -14,7 +14,7 @@ window.onload = ()=> {
 const getFutureProducts = async()=> {
     let firstCall =  await fetch('https://fakestoreapi.com/products?limit=6');
     let response = await firstCall.json();
-    console.log(response);
+
     response.map(item=> {
         let productDiv = document.createElement('div');
         productDiv.className = 'col-lg-4 col-md-6 p-7 col-sm-12'
@@ -31,11 +31,6 @@ const getFutureProducts = async()=> {
         // name
         let productName = document.createElement('p');
         productName.innerText = item.title
-
-        // // wichlist button
-        // let wichListBtn = document.createElement('button');
-        // wichListBtn.innerText = 'Add wichList';
-        // wichListBtn.className = 'wichlist-btn'
 
         // product details button
         let productDetailsBtn = document.createElement('button');
@@ -114,11 +109,6 @@ const getNewproducts = async ()=> {
         let productName = document.createElement('p');
         productName.innerText = item.title
 
-        // // wichlist button
-        // let wichListBtn = document.createElement('button');
-        // wichListBtn.innerText = 'Add wichList';
-        // wichListBtn.className = 'wichlist-btn'
-
         // product details button
         let productDetailsBtn = document.createElement('button');
         productDetailsBtn.innerText = 'Details';
@@ -172,7 +162,6 @@ const getNewproducts = async ()=> {
     detailsBtn.forEach(btn=> {
         btn.addEventListener('click',(e)=> {
             let productNumber = e.target.getAttribute('data-product')
-            console.log(productNumber);
             window.location.href = `../singleProduct/sProduct.html?productid=${productNumber}`;
         })
     })
