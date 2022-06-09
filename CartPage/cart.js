@@ -1,0 +1,30 @@
+const cartProducts = document.querySelector('.cart-products');
+
+window.onload = ()=> {
+    getProductsFromLoclStrg()
+}
+
+const getProductsFromLoclStrg = ()=> {
+    const myCart = JSON.parse(localStorage.getItem('cart'));
+    
+    myCart.forEach(product=> {
+        const theProduct = document.createElement('div')
+        theProduct.innerHTML = `
+            <div class="card" style="width: 14rem;">
+                <img src=${product.image} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title">${product.title}</h6>
+                        <p class="card-text">Pirce: ${product.price}$</p>
+                        <p class="card-text">Quantity: ${product.quantity}$</p>
+                        <p class="card-text">SubTotal: ${parseInt(product.quantity) * product.price}$</p>
+                        <button class="btn remove-product btn-danger">Remove</button>
+                    </div>
+            </div>
+            `
+            cartProducts.appendChild(theProduct)
+    })
+
+    const totalElement = document.querySelector('.total')
+    let cartTotal = myCart.map(item=> item.price * item.quantity).reduce((a,b)=> a + b)
+    totalElement.innerHTML = `Total : ${cartTotal}$`
+}

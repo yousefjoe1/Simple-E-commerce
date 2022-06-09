@@ -68,7 +68,7 @@ a {
 .home-header ul li a:hover::after {
     width: 100%;
     left: 0;
-    background-color: brown;
+    background-color: rgb(251, 220, 220);
 }
 
 .home-header ul li a::before {
@@ -498,4 +498,41 @@ footer {
         width: 200px;
     }
 
+}
+
+.cartContainer {
+    padding: 10px;
+}
+
+.titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.cart-products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 8px;
+    transition: all 0.3s ease-out;
+}
+
+.card:hover {
+    box-shadow: 2px 2px 4px lightgrey,-2px -2px 4px lightgrey;
+}
+
+.cart-total {
+    padding: 20px;
+}
+
+.total-div {
+    box-shadow: 2px 2px 4px lightgrey,-2px -2px 4px lightgrey;
+    padding: 20px;
+    border-radius: 6px;
 }
