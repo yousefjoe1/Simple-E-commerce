@@ -3,6 +3,7 @@ const allNewProductsDiv = document.querySelector('.new-products');
 const openMenu = document.querySelector('.open-menu') 
 const headerUl = document.querySelector('header ul')
 const closeMenu = document.querySelector('.close-menu')
+const body = document.querySelector('.body')
 
 window.onload = ()=> {
     if(!localStorage.getItem('cart')){
@@ -85,6 +86,33 @@ const getFutureProducts = async()=> {
             window.location.href = `./singleProduct/sProduct.html?productid=${productNumber}`;
         })
     })
+
+    const allproductContainers = document.querySelectorAll('.product-container')
+
+    allproductContainers.forEach(container=> {
+        container.addEventListener('mouseenter',()=> {
+            body.style.backgroundColor = 'black'
+            body.style.color = 'white'
+        })
+        container.addEventListener('mouseout',()=> {
+            body.style.backgroundColor = 'white'
+            body.style.color = 'black'
+        })
+
+    })
+    const allImgs = document.querySelectorAll('img')
+    allImgs.forEach(container=> {
+        container.addEventListener('mouseenter',()=> {
+            console.log('mouse');
+            body.style.backgroundColor = 'black'
+            body.style.color = 'white'
+        })
+        container.addEventListener('mouseout',()=> {
+            body.style.backgroundColor = 'white'
+            body.style.color = 'black'
+        })
+
+    })
 }
 
 getFutureProducts()
@@ -164,6 +192,32 @@ const getNewproducts = async ()=> {
             let productNumber = e.target.getAttribute('data-product')
             window.location.href = `../singleProduct/sProduct.html?productid=${productNumber}`;
         })
+    })
+
+    const allproductContainers = document.querySelectorAll('.product-container')
+
+    allproductContainers.forEach(container=> {
+        container.addEventListener('mouseenter',()=> {
+            body.style.backgroundColor = 'black'
+            body.style.color = 'white'
+        })
+        container.addEventListener('mouseout',()=> {
+            body.style.backgroundColor = 'white'
+            body.style.color = 'black'
+        })
+
+    })
+    const allImgs = document.querySelectorAll('img')
+    allImgs.forEach(container=> {
+        container.addEventListener('mouseenter',()=> {
+            body.style.backgroundColor = 'black'
+            body.style.color = 'white'
+        })
+        container.addEventListener('mouseout',()=> {
+            body.style.backgroundColor = 'white'
+            body.style.color = 'black'
+        })
+
     })
 
     let cartButton = document.querySelectorAll('.addtocart-btn')
