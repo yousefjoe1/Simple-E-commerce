@@ -146,6 +146,7 @@ a {
     box-shadow: 2px 2px 3px lightgray,-2px -2px 3px lightgray;
     padding: 30px;
     max-width: 300px;
+    height: fit-content;
     margin: 20px;
     border-radius: 5px;
     background-color: lightblue;
@@ -154,7 +155,8 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    /* justify-content: space-between; */
+    overflow: hidden;
 }
 
 .product-container:hover {
@@ -162,12 +164,16 @@ a {
     background-color: hsl(195, 53%, 79%,0.5);
 }
 
-.product-container:hover img {
+.product-container:hover .cartimg {
+    display: block;
+}
+
+.product-container:hover .product-img {
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
 }
 
-.product-container img {
+.product-container .product-img {
     width: 90%;
     border-radius: 10px;
 }
@@ -499,4 +505,49 @@ footer {
         width: 200px;
     }
 
+}
+
+.cartimg {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 40px;
+    cursor: pointer;
+    z-index: 150;
+}
+
+
+.animecartbtn {
+    transition: all 10s ease;
+    /* transform: translateX(-250px) translateY(100px); */
+    overflow: hidden;
+    z-index: 100;
+    animation-name: cartbtn;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes cartbtn {
+    0% {
+        transition: all 0.5s ease;
+        transform: translateX(0px) translateY(0px)
+    }
+
+    50% {
+        transform: translateX(-100px) translateY(38px)
+    }
+
+    70% {
+        transform: translateX(-230px) translateY(38px)
+    }
+    
+    100% {
+        transform: translateX(0px) translateY(0px)
+    }
+}
+
+.itemincart {
+    transform: rotateZ(360deg) translateX(-20px) translateY(30px);
+    transition: all 1s ease;
+    border-radius: 7px;
 }

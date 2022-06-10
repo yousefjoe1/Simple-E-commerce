@@ -15,8 +15,8 @@ const getProductsFromLoclStrg = ()=> {
         myCart.forEach(product=> {
             const theProduct = document.createElement('div')
             theProduct.innerHTML = `
-                <div class="card" style="width: 14rem;">
-                    <img src=${product.image} class="card-img-top" alt="...">
+                <div class="card" style="width: 20rem ;">
+                    <img src=${product.image} class="card-img-top" style="width: 150px" alt="...">
                         <div class="card-body">
                             <h6 class="card-title">${product.title}</h6>
                             <p class="card-text">Pirce: ${product.price}$</p>

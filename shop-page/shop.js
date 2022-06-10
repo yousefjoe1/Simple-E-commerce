@@ -2,7 +2,7 @@ const openMenu = document.querySelector('.open-menu')
 const headerUl = document.querySelector('header ul')
 const closeMenu = document.querySelector('.close-menu')
 const allProductsDiv = document.querySelector('.new-products')
-
+const body = document.querySelector('.body')
 openMenu.addEventListener('click',()=> {
     headerUl.style.right = '1px'
 })
@@ -112,6 +112,30 @@ const getNewproducts = async ()=> {
 
         })
     })
+    
+    cartButton.forEach(btn=> {
+            btn.addEventListener('mouseenter',()=> {
+                body.style.backgroundColor = 'black'
+                body.style.color = 'white'
+            })
+            btn.addEventListener('mouseout',()=> {
+                body.style.backgroundColor = '#575757'
+                body.style.color = 'white'
+            })
+    })
+
+    const allimgs = document.querySelectorAll('img')
+    allimgs.forEach(img=> {
+        img.addEventListener('mouseenter',()=> {
+            body.style.backgroundColor = 'black'
+            body.style.color = 'white'
+        })
+        img.addEventListener('mouseout',()=> {
+            body.style.backgroundColor = '#575757'
+            body.style.color = 'white'
+        })
+    })
+
 }
 
 getNewproducts()

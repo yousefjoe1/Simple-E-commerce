@@ -28,7 +28,7 @@ const getFutureProducts = async()=> {
         //img
         let img = document.createElement('img');
         img.src = item.image;
-
+        img.className = `product-img`
         // name
         let productName = document.createElement('p');
         productName.innerText = item.title
@@ -69,8 +69,13 @@ const getFutureProducts = async()=> {
         cartIcon.innerText = 'Add To Cart'
         cartIcon.className = 'addtocart-btn'
         cartIcon.setAttribute('data-product',item.id)
+        
+        const cartimg = document.createElement('img')
+        cartimg.className = `cartimg`
+        cartimg.src = 'https://www.mcicon.com/wp-content/uploads/2021/06/Cart-03.jpg'
 
         priceAndCartIcon.appendChild(productPrice)
+        priceAndCartIcon.appendChild(cartimg)
         priceAndCartIcon.appendChild(cartIcon)
 
         productDiv.appendChild(priceAndCartIcon)
@@ -87,27 +92,25 @@ const getFutureProducts = async()=> {
         })
     })
 
-    const allproductContainers = document.querySelectorAll('.product-container')
 
-    allproductContainers.forEach(container=> {
-        container.addEventListener('mouseenter',()=> {
+    detailsBtn.forEach(btn=> {
+        btn.addEventListener('mouseenter',()=> {
             body.style.backgroundColor = 'black'
             body.style.color = 'white'
         })
-        container.addEventListener('mouseout',()=> {
+        btn.addEventListener('mouseout',()=> {
             body.style.backgroundColor = 'white'
             body.style.color = 'black'
         })
 
     })
     const allImgs = document.querySelectorAll('img')
-    allImgs.forEach(container=> {
-        container.addEventListener('mouseenter',()=> {
-            console.log('mouse');
+    allImgs.forEach(img=> {
+        img.addEventListener('mouseenter',()=> {
             body.style.backgroundColor = 'black'
             body.style.color = 'white'
         })
-        container.addEventListener('mouseout',()=> {
+        img.addEventListener('mouseout',()=> {
             body.style.backgroundColor = 'white'
             body.style.color = 'black'
         })
@@ -132,6 +135,7 @@ const getNewproducts = async ()=> {
         //img
         let img = document.createElement('img');
         img.src = item.image;
+        img.className = `product-img`
 
         // name
         let productName = document.createElement('p');
@@ -177,8 +181,13 @@ const getNewproducts = async ()=> {
         cartIcon.className = 'addtocart-btn'
         cartIcon.setAttribute('data-product',item.id)
 
+        const cartimg = document.createElement('img')
+        cartimg.className = `cartimg`
+        cartimg.src = 'https://www.mcicon.com/wp-content/uploads/2021/06/Cart-03.jpg'
+
         priceAndCartIcon.appendChild(productPrice)
         priceAndCartIcon.appendChild(cartIcon)
+        priceAndCartIcon.appendChild(cartimg)
 
         productDiv.appendChild(priceAndCartIcon)
         allNewProductsDiv.appendChild(productDiv)
@@ -194,9 +203,7 @@ const getNewproducts = async ()=> {
         })
     })
 
-    const allproductContainers = document.querySelectorAll('.product-container')
-
-    allproductContainers.forEach(container=> {
+    detailsBtn.forEach(container=> {
         container.addEventListener('mouseenter',()=> {
             body.style.backgroundColor = 'black'
             body.style.color = 'white'
@@ -223,6 +230,10 @@ const getNewproducts = async ()=> {
     let cartButton = document.querySelectorAll('.addtocart-btn')
     cartButton.forEach(btn=> {
         btn.addEventListener('click',(e)=> {
+
+            // if the product in the cart
+
+
             let chosenProductId = parseInt(e.target.getAttribute('data-product'))
             let theProduct = response.filter(product=> product.id === chosenProductId)
             let chosenProduct = [{...theProduct[0],quantity:1}] 
@@ -236,12 +247,28 @@ const getNewproducts = async ()=> {
                     let storedProduct = JSON.parse(myStorage)
                     let allProduct = [...storedProduct,...chosenProduct]
                     localStorage.setItem('cart',JSON.stringify(allProduct))
+
+                    // ----------------Animation
+                    e.target.classList.add('animecartbtn')
+                    setTimeout(() => {
+                        e.target.innerText = 'In Cart The Now'
+                        // e.target.style.display = 'none'
+                    }, 2000);
+                }else {
+                    console.log('in the cart');
+                    e.target.innerText = 'In Cart The Now'
+                    e.target.classList.add('itemincart')
                 }
             }else {
                     let myStorage = localStorage.getItem('cart')
                     let storedProduct = JSON.parse(myStorage)
                     let allProduct = [...storedProduct,...chosenProduct]
                     localStorage.setItem('cart',JSON.stringify(allProduct))
+                    e.target.classList.add('animecartbtn')
+                    setTimeout(() => {
+                        // e.target.style.display = 'none'
+                        e.target.innerText = 'In Cart The Now'
+                    }, 2000);
             }
 
         })
@@ -259,3 +286,4 @@ openMenu.addEventListener('click',()=> {
 closeMenu.addEventListener('click',()=> {
     headerUl.style.right = '-300px'
 })
+
