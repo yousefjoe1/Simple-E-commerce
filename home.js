@@ -255,7 +255,6 @@ const getNewproducts = async ()=> {
                         // e.target.style.display = 'none'
                     }, 2000);
                 }else {
-                    console.log('in the cart');
                     e.target.innerText = 'In Cart The Now'
                     e.target.classList.add('itemincart')
                 }

@@ -275,18 +275,19 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    overflow: hidden;
 }
 
 .product-container:hover {
     box-shadow: 1px 1px 3px rgb(203, 197, 197),-1px -1px 3px rgb(205, 199, 199);
 }
 
-.product-container:hover img {
+.product-container:hover .product.img {
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
 }
 
-.product-container img {
+.product-container .product-img {
     width: 80%;
     border-radius: 10px;
 }
@@ -333,4 +334,72 @@ footer {
 .addtocart-btn:hover {
     background-color: aliceblue;
     color: black;
+}
+
+
+// ------------------------ loading animation
+.load-anime {
+    background-color: black;
+    color: aliceblue;
+    padding: 5px;
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-iteration-count: 6;
+}
+
+@keyframes loading {
+    0% {
+        transform: scale(1.1) translateX(-50px);
+    }
+    50% {
+        transform: scale(1.5) translateX(50px);
+    }
+    100% {
+        transform: scale(1.1) translateX(-50px);
+    }
+}
+
+.cartimg {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 40px;
+    cursor: pointer;
+    z-index: 150;
+}
+
+
+.animecartbtn {
+    transition: all 10s ease;
+    /* transform: translateX(-250px) translateY(100px); */
+    overflow: hidden;
+    z-index: 100;
+    animation-name: cartbtn;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes cartbtn {
+    0% {
+        transition: all 0.5s ease;
+        transform: translateX(0px) translateY(0px)
+    }
+
+    50% {
+        transform: translateX(-100px) translateY(38px)
+    }
+
+    70% {
+        transform: translateX(-250px) translateY(38px)
+    }
+    
+    100% {
+        transform: translateX(0px) translateY(0px)
+    }
+}
+
+.itemincart {
+    transform: rotateZ(360deg) translateX(-20px) translateY(30px);
+    transition: all 2s ease;
+    border-radius: 7px;
 }

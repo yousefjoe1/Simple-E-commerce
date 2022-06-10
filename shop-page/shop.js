@@ -12,11 +12,19 @@ closeMenu.addEventListener('click',()=> {
 })
 
 
+window.onload = ()=> {
+    if(typeof allProductsDiv !== Object){
+        allProductsDiv.innerHTML = `<div class='load-anime'>Loading Products ...................</div>`
+    }
+}
+
 
 const getNewproducts = async ()=> {
     let firstCall =  await fetch('https://fakestoreapi.com/products');
     let response = await firstCall.json();
+    allProductsDiv.innerHTML = ''
     response.map(item=> {
+        console.log(typeof allProductsDiv);
         let productDiv = document.createElement('div');
         productDiv.className = 'col-lg-4 col-md-6 p-7 col-sm-12'
         productDiv.classList.add('product-container')
@@ -28,6 +36,7 @@ const getNewproducts = async ()=> {
         //img
         let img = document.createElement('img');
         img.src = item.image;
+        img.className = `product-img`
 
         // name
         let productName = document.createElement('p');
@@ -70,9 +79,14 @@ const getNewproducts = async ()=> {
         cartIcon.className = 'addtocart-btn'
         cartIcon.setAttribute('data-product',item.id)
 
+        // Cart Image
+        const cartimg = document.createElement('img')
+        cartimg.className = `cartimg`
+        cartimg.src = 'https://www.mcicon.com/wp-content/uploads/2021/06/Cart-03.jpg'
 
         priceAndCartIcon.appendChild(productPrice)
         priceAndCartIcon.appendChild(cartIcon)
+        priceAndCartIcon.appendChild(cartimg)
 
         productDiv.appendChild(priceAndCartIcon)
         allProductsDiv.appendChild(productDiv)
@@ -102,12 +116,27 @@ const getNewproducts = async ()=> {
                     let storedProduct = JSON.parse(myStorage)
                     let allProduct = [...storedProduct,...chosenProduct]
                     localStorage.setItem('cart',JSON.stringify(allProduct))
+
+                        // ----------------Animation
+                        e.target.classList.add('animecartbtn')
+                        setTimeout(() => {
+                            e.target.innerText = 'In Cart The Now'
+                            // e.target.style.display = 'none'
+                        }, 2000);
+                }else {
+                    e.target.innerText = 'In Cart The Now'
+                    e.target.classList.add('itemincart')
                 }
             }else {
                     let myStorage = localStorage.getItem('cart')
                     let storedProduct = JSON.parse(myStorage)
                     let allProduct = [...storedProduct,...chosenProduct]
                     localStorage.setItem('cart',JSON.stringify(allProduct))
+                    e.target.classList.add('animecartbtn')
+                    setTimeout(() => {
+                        // e.target.style.display = 'none'
+                        e.target.innerText = 'In Cart The Now'
+                    }, 2000);
             }
 
         })
